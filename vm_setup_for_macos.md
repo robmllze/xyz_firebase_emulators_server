@@ -84,8 +84,6 @@ compute ssh robmllze2 --project xyz-app-example --zone europe-west2-a
 sudo systemctl stop nginx
 gcloud compute ssh robmllze0 --project xyz-app-example --zone australia-southeast2-a -- -L 4000:localhost:4000 -L 5001:localhost:5001 -L 8080:localhost:8080 -L 9099:localhost:9099 -L 9199:localhost:9199
 sudo systemctl start nginx
-
-gcloud compute ssh robmllze2 --project xyz-app-example --zone europe-west2-a -- -L 4000:localhost:4000 -L 5001:localhost:5001 -L 8080:localhost:8080 -L 9099:localhost:9099 -L 9199:localhost:9199
 ```
 5. Create the Firebase project.
 ```sh
@@ -96,7 +94,7 @@ ls -l
 nano firebase.json # modify firebase.json to the firebase.json included in this repo
 ```
 7. Start the emulators with `firebase emulators:start`
-8. Access the emulator dashboard with the VM's public IP or URL, like [http:\\34.129.161.164] [https:\\www.robmllze0.xyz:4001/] or [http:\\robmllze0.xyz:4000/].
+8. Access the emulator dashboard with the VM's public IP or URL, like [http://34.129.161.164] [https://www.robmllze0.xyz:4001/] or [http://robmllze0.xyz:4000/].
 9. Before running the app in Chrome, you must set the site to allow mixed content.
   - On Chrome on desktop or Android, go to `chrome://flags/#unsafely-treat-insecure-origin-as-secure`. Enable the flag `unsafely-treat-insecure-origin-as-secure` then add all the ports used by the app and emulator, e.g. `http://robmllze0.xyz:5001,https://robmllze0.xyz:5002,http://robmllze0.xyz:8080,https://robmllze0.xyz:8081,http://robmllze0.xyz:9099,https://robmllze0.xyz:9100,http://robmllze0.xyz:9199,https://robmllze0.xyz:9200,http://robmllze1.xyz:5001,https://robmllze1.xyz:5002,http://robmllze1.xyz:8080,https://robmllze1.xyz:8081,http://robmllze1.xyz:9099,https://robmllze1.xyz:9100,http://robmllze1.xyz:9199,https://robmllze1.xyz:9200,http://robmllze2.xyz:5001,https://robmllze2.xyz:5002,http://robmllze2.xyz:8080,https://robmllze2.xyz:8081,http://robmllze2.xyz:9099,https://robmllze2.xyz:9100,http://robmllze2.xyz:9199,https://robmllze2.xyz:9200`.
   - On Chrome
